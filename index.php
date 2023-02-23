@@ -7,15 +7,14 @@
 
         if(empty($username)){
             $err[] = "username shouldn't be empty";
-        }
-        if(strlen($username) <= 7){
+        }elseif(strlen($username) <= 7){
             $err[] = "username should be at least 8 characters long";
         }
 
         if(empty($pwd)){
             $err[] = "please fill password area";
         }
-        if(strlen($pwd) < 8){
+        elseif(strlen($pwd) < 8){
             $err[] = "password too short";
         }
 
@@ -23,7 +22,7 @@
             $err[] = "email can't be left empty";
         }
         // FILTER_VALIDATE_EMAIL
-       if(filter_var($email,FILTER_VALIDATE_EMAIL) == false){
+       elseif(filter_var($email,FILTER_VALIDATE_EMAIL) == false){
         $err[] = "invalid email <br>";
        }
        
@@ -51,22 +50,28 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="stylesheet" href="dist/style.css">
     <title>Document</title>
 </head>
 <body>
     <?php
         if(!empty($err) && isset($_POST["reg"])){
+            echo '<div class="errs">';
             foreach($err as $celary){
                 echo $celary . "<br>";
             }
+            echo "</div>";
         }
     ?>
-    <form action="" method="post">
-        <h1>sign up</h1>
-        <input type="email" placeholder="email" name="email"><br>
-        <input type="text" placeholder="username" name="user"><br>
-        <input type="password" placeholder="password" name="pass"><br>
-        <button type="submit" name="reg">submit</button>
-    </form>
+    
+    <div class="formdiv">
+        <form action="" method="post">
+            <h1>sign up</h1>
+            <input type="email" placeholder="email" name="email"><br>
+            <input type="text" placeholder="username" name="user"><br>
+            <input type="password" placeholder="password" name="pass"><br>
+            <button type="submit" name="reg">submit</button>
+        </form>
+    </div>
 </body>
 </html>
