@@ -7,7 +7,7 @@
 
         if(empty($username)){
             $err[] = "username shouldn't be empty";
-        }elseif(strlen($username) <= 7){
+        }elseif(strlen($username) < 5){
             $err[] = "username should be at least 8 characters long";
         }
 
@@ -26,14 +26,32 @@
         $err[] = "invalid email <br>";
        }
        
+       $file = fopen("private/text.txt","a+");
+       // loop through to check if the username and / or the email are taken
+       // we won't check for passwordd because more than 1 person can use a password
+       // I think i should check for only gmail 🤔
+           while(!feof($file)){
+               $lin = fgets($file);
+               if($lin == null){
+                $lin = "end|of|file";
+               }
+               $line = explode("|",$lin);
+            //    var_dump($line);
+               if($username == $line[0]){
+                $err[] = "username is taken"; 
+               }
+               if($email == $line[1]){
+                $err[] = "Email has already been used"; 
+               }
+           }
        if(empty($err)){
+        $file = fopen("private/text.txt","a+");
         $pwd2 = password_hash($pwd,PASSWORD_DEFAULT);
-        $file = fopen("text.txt","a+");
-        $message = $username . "|" . $email . "|" . $pwd2 . "\n";
+        $message = "\n" . $username . "|" . $email . "|" . $pwd2;
         fwrite($file,$message);
         fclose($file);
-        echo "youv'e been registered successfully";
-        header("location:../private/customer.php");
+        echo '<div class="errs"> youv`e been registered successfully <br> <a href="login.php">Login...</a></div>';
+        // header("locatio n:../private/customer.php");
        }
     }
     else{
@@ -67,9 +85,17 @@
     <div class="formdiv">
         <form action="" method="post">
             <h1>sign up</h1>
-            <input type="email" placeholder="email" name="email"><br>
-            <input type="text" placeholder="username" name="user"><br>
+            <input type="email" placeholder="email" name="email" value="<?php
+            if((isset($_POST["reg"])) && (!empty($err))){
+              echo $email;
+            }?>">
+           
+            <input type="text" placeholder="username" name="user" value="<?php
+            if((isset($_POST["reg"])) && (!empty($err))){
+                echo $username;
+            }?>" >
             <input type="password" placeholder="password" name="pass"><br>
+            <input type="password" placeholder="password" name="pass2"><br>
             <button type="submit" name="reg">submit</button>
         </form>
     </div>
