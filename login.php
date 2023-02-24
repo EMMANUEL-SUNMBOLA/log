@@ -4,37 +4,56 @@ $err = [];
         $userid = $_POST["userid"];
         $pass = $_POST["pass"];
 
-        if(!isset($userid)){
+        if(empty($userid)){
             $err[] = "please fill usernsme or email";
         }
-        if(!isset($pass)){
+        if(empty($pass)){
             $err[] = "please fill password";
         }
         if(empty($err)){
             if(filter_var($userid,FILTER_VALIDATE_EMAIL) == TRUE){
                 $file = fopen("private/text.txt","r");
                 while(!feof($file)){
+                    $lin = fgets($file);
+                    if($lin == null){
+                        $lin = "end|of|file";
+                    }
                     $line = explode("|",$lin);
                     if($userid == $line[1]){
                         if(password_verify($pass,$line[2]) == true){
-                            header("Location:customer.php");
+                            header("Location:private/customer.php");
                         }
+                        else{
+                            $err[] = "wrong  password";
+                        }
+                    }
+                    else{
+                        $err[] = "Inavlid email";
                     }
                 }
                 fclose($file);
             }
             else{
-                $file = fopen("text.txt","r");
+                $file = fopen("private/text.txt","r");
                 while(!feof($file)){
                     $lin = fgets($file);
+                    if($lin == null){
+                        $lin = "end|of|file";
+                    }
                     $line = explode("|",$lin);
                     if($userid == $line[0]){
                        if(password_verify($pass,$line[2]) == true){
-                            header("Location:customer.php");
+                            header("Location:private/customer.php");
+                       }
+                       else{
+                        $err[] = "wrong  password";
                        }
                     }
-                    fclose($file);
+                    else{
+                        $err[] = "Inavlid username";
+                    }
                 }
+                fclose($file);
             }
         }
     }

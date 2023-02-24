@@ -90,6 +90,7 @@
             <input type="password" placeholder="password" name="pass"><br>
             <input type="password" placeholder="confirm your password" name="pass2"><br>
             <button type="submit" name="reg">submit</button>
+            <p> Already have an account ? <a href="login.php">log-in</a></p>
         </form>
     </div>
 </body>
