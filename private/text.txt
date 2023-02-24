@@ -1,2 +1,3 @@
 cavemans|example1234@gmail.com|$2y$10$P2oExEm/bXCsj9pN32ZTC.uhzBueqh/dZk3aOLlHol2EoYoIcsGNa
 shade|johndoe@gmail.com|$2y$10$WWDKU.KFX9UewUeI3Yd2yerLbhYdmIikewjv0YvL22DXdfZoIz9P6
+nivea|adedayoemmanuel729@gmail.com|$2y$10$MuS4ZE8WFn0vQiZBfJ5BeeASgBeDEe5H0aX11MQMLAVihCeSW1R66

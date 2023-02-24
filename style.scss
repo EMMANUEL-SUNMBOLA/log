@@ -51,7 +51,7 @@
     input[name="pass2" ]{
         margin-top: 10px;
     }
-    button[name ="reg" ]{
+    button{
         width: 150px;
         height: 30px;
         border-radius: 5px;
@@ -64,6 +64,10 @@
             background-color: #e8effc;
             color: #624ce0;
         }
+    }
+    p{
+        font-style: italic;
+        margin-top: 20px;
     }
   }
 }
