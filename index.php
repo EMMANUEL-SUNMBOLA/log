@@ -3,6 +3,7 @@
     if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["reg"])){
         $username = $_POST["user"];
         $pwd = $_POST["pass"];
+        $pwd2 = $_POST["pass2"];
         $email = $_POST["email"];
 
         if(empty($username)){
@@ -16,6 +17,9 @@
         }
         elseif(strlen($pwd) < 8){
             $err[] = "password too short";
+        }
+        elseif($pwd !== $pwd2){
+            $err[] = "confirm your password";
         }
 
         if(empty($email)){
@@ -59,18 +63,7 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="stylesheet" href="dist/style.css">
-    <title>Document</title>
-</head>
+<?php require("head.php");?>
 <body>
     <?php
         if(!empty($err) && isset($_POST["reg"])){
@@ -95,7 +88,7 @@
                 echo $username;
             }?>" >
             <input type="password" placeholder="password" name="pass"><br>
-            <input type="password" placeholder="password" name="pass2"><br>
+            <input type="password" placeholder="confirm your password" name="pass2"><br>
             <button type="submit" name="reg">submit</button>
         </form>
     </div>
