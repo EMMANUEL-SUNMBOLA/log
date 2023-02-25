@@ -12,7 +12,28 @@
 </head>
 <body>
 <section class="cust">
-    
+    Welcome
+    <?php 
+    require("../../private/log.php");
+
+    if(!isset($_SESSION['name'])){
+        header("Location:../login.php");
+    }
+    else{
+        echo $_SESSION['name'];
+    }
+
+    if(isset($_POST['out'])){
+
+        session_unset();
+        header("Location:login.php");
+    }
+    ?>
+    <form action="" method="post">
+        <button type="submit" name="out">
+            Log out
+        </button>
+    </form>
 </section>
 </body>
 </html>

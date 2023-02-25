@@ -53,25 +53,25 @@
         margin-top: 10px;
         text-transform: none;
     }
-    button{
-        width: 150px;
-        height: 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-        background-color: #1c234a;
-        color: #1bfaad;
-        transition: color .3s ease-in-out;
-        transition: background-color .3s ease-in-out;
-        &:hover{
-            background-color: #e8effc;
-            color: #624ce0;
-        }
-    }
     p{
         font-style: italic;
         margin-top: 20px;
     }
-  }
+}
+}
+button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #1c234a;
+    color: #1bfaad;
+    transition: color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    &:hover{
+        background-color: #e8effc;
+        color: #624ce0;
+    }
 }
 .cust{
     background-color: #ed4d00;

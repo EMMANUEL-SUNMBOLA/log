@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $err = [];
     if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["log"])){
         $userid = strip_tags($_POST["userid"]);
@@ -22,6 +22,7 @@ $err = [];
                     $line = explode("|",$lin);
                     if($userid == $line[1]){
                         if(password_verify($pass,$line[2]) == true){
+                            $_SESSION['name'] = $line[0];
                             header("Location:customers/customer.php?$username");
                         }
                         else{
@@ -44,6 +45,7 @@ $err = [];
                     $line = explode("|",$lin);
                     if($userid == $line[0]){
                        if(password_verify($pass,$line[2]) == true){
+                        $_SESSION['name'] = $line[0];
                             header("Location:customers/customer.php?$username");
                        }
                        else{
