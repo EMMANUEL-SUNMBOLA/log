@@ -7,11 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="head">
-        <h1>Welcome <?php 
-        $file = fopen("text.txt","r");
-        
-        ?></h1>
-    </div>
+hi
 </body>
 </html>

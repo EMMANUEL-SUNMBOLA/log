@@ -1,18 +1,18 @@
 <?php
 $err = [];
     if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["log"])){
-        $userid = $_POST["userid"];
-        $pass = $_POST["pass"];
+        $userid = strip_tags($_POST["userid"]);
+        $pass = strip_tags($_POST["pass"]);
 
         if(empty($userid)){
-            $err[] = "please fill usernsme or email";
+            $err[] = "please fill username or email";
         }
         if(empty($pass)){
             $err[] = "please fill password";
         }
         if(empty($err)){
             if(filter_var($userid,FILTER_VALIDATE_EMAIL) == TRUE){
-                $file = fopen("private/text.txt","r");
+                $file = fopen("../private/text.txt","r");
                 while(!feof($file)){
                     $lin = fgets($file);
                     if($lin == null){
@@ -21,7 +21,7 @@ $err = [];
                     $line = explode("|",$lin);
                     if($userid == $line[1]){
                         if(password_verify($pass,$line[2]) == true){
-                            header("Location:private/customer.php");
+                            header("Location:customers/customer.php");
                         }
                         else{
                             $err[] = "wrong  password";
@@ -34,7 +34,7 @@ $err = [];
                 fclose($file);
             }
             else{
-                $file = fopen("private/text.txt","r");
+                $file = fopen("../private/text.txt","r");
                 while(!feof($file)){
                     $lin = fgets($file);
                     if($lin == null){
@@ -43,7 +43,7 @@ $err = [];
                     $line = explode("|",$lin);
                     if($userid == $line[0]){
                        if(password_verify($pass,$line[2]) == true){
-                            header("Location:private/customer.php");
+                            header("Location:customers/customer.php");
                        }
                        else{
                         $err[] = "wrong  password";
@@ -76,7 +76,7 @@ $err = [];
         <form action="" method="post">
             <h1>Log in</h1>
             <input type="text" placeholder="Email or Username" name="userid"> <br>
-            <input type="password" placeholder="password" name="pass"> <br>
+            <input type="password" placeholder="PASSWORD" name="pass"> <br>
             <button type="submit" name="log">Login</button>
             <p>Don't have an account ?<a href="index.php">sign-up</a></p>
         </form>

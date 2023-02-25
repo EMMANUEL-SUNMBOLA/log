@@ -4,9 +4,9 @@
     outline: none;
     box-sizing: border-box;
     font-family: sans-serif;
+    text-transform: uppercase;
 }
 .errs{
-    text-transform: uppercase;
     width: 100%;
     padding: 20px 0px 20px 0px;
     margin-bottom: 20px;
@@ -46,10 +46,12 @@
         font-size: 20px;
         color: #ef374e;
         margin-top: 20px;
+        text-transform: none;
 
     }
     input[name="pass2" ]{
         margin-top: 10px;
+        text-transform: none;
     }
     button{
         width: 150px;

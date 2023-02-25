@@ -1,10 +1,10 @@
 <?php 
         $err = [];
     if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["reg"])){
-        $username = $_POST["user"];
-        $pwd = $_POST["pass"];
-        $pwd2 = $_POST["pass2"];
-        $email = $_POST["email"];
+        $username = strip_tags($_POST["user"]);
+        $pwd = strip_tags($_POST["pass"]);
+        $pwd2 = strip_tags($_POST["pass2"]);
+        $email = strip_tags($_POST["email"]);
 
         if(empty($username)){
             $err[] = "username shouldn't be empty";
@@ -30,7 +30,7 @@
         $err[] = "invalid email <br>";
        }
        
-       $file = fopen("private/text.txt","a+");
+       $file = fopen("../private/text.txt","a+");
        // loop through to check if the username and / or the email are taken
        // we won't check for passwordd because more than 1 person can use a password
        // I think i should check for only gmail 🤔
@@ -49,7 +49,7 @@
                }
            }
        if(empty($err)){
-        $file = fopen("private/text.txt","a+");
+        $file = fopen("../private/text.txt","a+");
         $pwd2 = password_hash($pwd,PASSWORD_DEFAULT);
         $message = "\n" . $username . "|" . $email . "|" . $pwd2;
         fwrite($file,$message);
@@ -78,17 +78,17 @@
     <div class="formdiv">
         <form action="" method="post">
             <h1>sign up</h1>
-            <input type="email" placeholder="email" name="email" value="<?php
+            <input type="email" placeholder="EMAIL" name="email" value="<?php
             if((isset($_POST["reg"])) && (!empty($err))){
               echo $email;
             }?>">
            
-            <input type="text" placeholder="username" name="user" value="<?php
+            <input type="text" placeholder="USERNAME" name="user" value="<?php
             if((isset($_POST["reg"])) && (!empty($err))){
                 echo $username;
             }?>" >
-            <input type="password" placeholder="password" name="pass"><br>
-            <input type="password" placeholder="confirm your password" name="pass2"><br>
+            <input type="password" placeholder="PASSWORD" name="pass"><br>
+            <input type="password" placeholder="CONFIRM YOUR PASSWORD" name="pass2"><br>
             <button type="submit" name="reg">submit</button>
             <p> Already have an account ? <a href="login.php">log-in</a></p>
         </form>
