@@ -1,6 +1,6 @@
 # log
 
-<h1>Hi welcome to my repossitory</h1>
+<h1>Hi welcome to my repository</h1>
 <h2>Signup & login system</h2>
 <P>In this project</p>
 <ul>
@@ -10,6 +10,6 @@
 </ul>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ul>
-<li>In the future I'll switch the  file for a database</li>
 <li>I'll add an admin page where the admin can add product images ,prices ,and description</li>
+<li>In the future I'll switch the  file (txt) for a database (sql/sql lite)</li>
 </ul>
