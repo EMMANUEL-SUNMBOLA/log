@@ -58,7 +58,6 @@
         margin-top: 20px;
     }
 }
-}
 button{
     width: 150px;
     height: 30px;
@@ -73,7 +72,33 @@ button{
         color: #624ce0;
     }
 }
+}
 .cust{
     background-color: #ed4d00;
-    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .well{
+        gap: 20px;
+    }
+    span{
+        color: #000000;
+        font-size: 20px;
+    }
+    button{
+        width: 150px;
+        height: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #1c234a;
+        color: #1bfaad;
+        transition: color .3s ease-in-out;
+        transition: background-color .3s ease-in-out;
+        &:hover{
+            background-color: #e8effc;
+            color: #624ce0;
+        }
+    }
+    
 }

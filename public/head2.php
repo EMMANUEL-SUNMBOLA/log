@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,6 +20,7 @@ session_start();
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/dist/style.css" />
     <title>FLOWERLY| best neighborhood flower vendor</title>
   </head>
   <body>
@@ -48,7 +46,7 @@ session_start();
             <li>
               <a href="/login.php" class="nav-link">Log-in</a>
             </li>
-            <li><a href="/register.php" class="nav-link">Sign-up</a></li>
+            <li><a href="/signup.php" class="nav-link">Sign-up</a></li>
           </ul>
         </div>
       </div>

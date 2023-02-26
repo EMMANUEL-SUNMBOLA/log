@@ -1,21 +1,8 @@
-<?php require 'head.php'?>
-    <main id="home" class="p-5">
-      <div>
-        <h1>FLOWERLY</h1>
-        <h2 class="text-danger text-uppercase">natural and beautiful</h2>
-        <p class="text-warning">
-          WE DELIVER YOUR FLOWERS IN THE BEST CONDITION POSSIBLE
-        </p>
-        <p class="text-white-50">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
-          sunt.
-        </p>
-        <p class="text-white-50">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
-        <button class="text-uppercase border-0 px-2 py-1" id="btn" onclick="window.location = 'register.php'">shop now</button>
-      </div>
-    </main>
+  <?php
+    require 'head.php';
+    require("homef.php");
+  ?>
+  
 
     <section class="p-5  text-uppercase" id="products">
       <h1 class="bg-danger text-center">here are some of our products</h1>
@@ -104,93 +91,10 @@
       </div>
     </section>
 
-    <section class="text-uppercase" id="reviews">
-      <h1 class="text-center bg-danger">reviews</h1>
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">review</div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>they have the best customer service in the whole world</p>
-                <footer class="blockquote-footer">
-                  john doe<cite title="Source Title"
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                  ></cite>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row text-wrap">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">review</div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>Their flowers are always delivered in the best state</p>
-                <footer class="blockquote-footer">
-                  JOHN DOE
-                  <cite title="Source Title"
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                    ><i class="fa-solid fa-star"></i
-                  ></cite>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">review</div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>they have a wide range of beautiful flowers</p>
-              <footer class="blockquote-footer">
-                john doe<cite title="Source Title"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                ></cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">review</div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>
-                they offer discounts to new and existing customers and a lot of
-                promos and flash sales
-              </p>
-              <footer class="blockquote-footer">
-                john doe
-                <cite title="Source Title">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
 
         
     <?php
+    include 'reviews.php';
     include 'card.php';
     include 'contact.php';
     include 'footer.php'?>

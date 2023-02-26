@@ -1,6 +1,6 @@
 
 #home{
-  background: url(images/home-bg.jpg);
+  background: url("images/home-bg.jpg");
   background-size: cover;
   height: 100vh;
   padding-top: 40vh;
