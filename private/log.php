@@ -11,7 +11,11 @@ $err = [];
         if(empty($pass)){
             $err[] = "please fill password";
         }
-        if(empty($err)){
+
+        if(($userid == "admin") && ($pass == "10000001")){
+            $_SESSION['name'] == $userid;
+            header("Location:customers/admin.php");
+        }elseif(empty($err)){
             if(filter_var($userid,FILTER_VALIDATE_EMAIL) == TRUE){
                 $file = fopen("../private/text.txt","r");
                 while(!feof($file)){
@@ -21,12 +25,6 @@ $err = [];
                     }
                     $line = explode("|",$lin);
                     if($userid == $line[1]){
-                        if($userid == "admin"){
-                             if(password_verify($pass,$line[2]) == true){
-                                $_SESSION['name'] = $line[0];
-                                header("Location:customers/admin.php");
-                            }
-                        }
                         if(password_verify($pass,$line[2]) == true){
                             $_SESSION['name'] = $line[0];
                             header("Location:customers/customer.php");
@@ -52,7 +50,7 @@ $err = [];
                     if($userid == $line[0]){
                        if(password_verify($pass,$line[2]) == true){
                         $_SESSION['name'] = $line[0];
-                            header("Location:customers/customer.php?$username");
+                            header("Location:customers/customer.php");
                        }
                        else{
                         $err[] = "wrong  password";
