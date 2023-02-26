@@ -41,7 +41,6 @@
             }
     
             if(isset($_POST['out'])){
-    
                 session_unset();
                 header("Location:login.php");
             }
@@ -67,7 +66,7 @@
               <div class="card-body">
                 <h5 class="card-title">PINK FLOWER BUSH</h5>
                 <p class="card-text">BEST FLOWER TO BUY ON YOYR FIRST DATE</p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -80,7 +79,7 @@
                 <p class="card-text">
                   has a very nice fragrance and is very appealing
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -93,7 +92,7 @@
                 <p class="card-text">
                   very bright and vibrantcan be gifeted in different occasions
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -109,7 +108,7 @@
                 <p class="card-text">
                   the best han-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -122,7 +121,7 @@
                 <p class="card-text">
                   the best han-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -135,7 +134,7 @@
                 <p class="card-text">
                   the best han-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button name="flo"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>

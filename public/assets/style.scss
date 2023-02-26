@@ -86,19 +86,33 @@ button{
         color: #000000;
         font-size: 20px;
     }
-    button{
-        width: 150px;
-        height: 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-        background-color: #1c234a;
-        color: #1bfaad;
-        transition: color .3s ease-in-out;
-        transition: background-color .3s ease-in-out;
-        &:hover{
-            background-color: #e8effc;
-            color: #624ce0;
-        }
-    }
     
+}
+button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #1c234a;
+    color: #1bfaad;
+    transition: color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    &:hover{
+        background-color: #e8effc;
+        color: #624ce0;
+    }
+}
+button[name = "flo"]{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #1c234a;
+    color: #fff;
+    transition: color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    &:hover{
+        background-color: #e8effc;
+        color: #624ce0;
+    }
 }
