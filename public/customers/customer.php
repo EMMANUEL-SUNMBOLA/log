@@ -42,7 +42,7 @@
     
             if(isset($_POST['out'])){
                 session_unset();
-                header("Location:login.php");
+                header("Location:../login.php");
             }
             ?>
         </span>

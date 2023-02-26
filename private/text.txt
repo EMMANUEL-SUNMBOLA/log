@@ -2,3 +2,4 @@ cavemans|example1234@gmail.com|$2y$10$P2oExEm/bXCsj9pN32ZTC.uhzBueqh/dZk3aOLlHol
 shade|johndoe@gmail.com|$2y$10$WWDKU.KFX9UewUeI3Yd2yerLbhYdmIikewjv0YvL22DXdfZoIz9P6
 powerbank|adedayoemmanuel729@gmail.com|$2y$10$8pS9C3Lav5vFLJBbEIOJpey1iOJJBfL/QifU4EefMf.q/vuLTPtjG
 caveman|adedayoforgit@gmail.com|$2y$10$6gh1UutwNyoRF0QDI9HTsuU3j5k96ifbgoduyOukQgxTUyE/Smt0S
+admin|admin05@gmail.com|$2y$10$2qTQh5YIKmdqaEMxAIDYjeeIN2ncpWPFKUtHM7CAmmyeN0ZSlK/XW

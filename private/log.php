@@ -21,9 +21,15 @@ $err = [];
                     }
                     $line = explode("|",$lin);
                     if($userid == $line[1]){
+                        if($userid == "admin"){
+                             if(password_verify($pass,$line[2]) == true){
+                                $_SESSION['name'] = $line[0];
+                                header("Location:customers/admin.php");
+                            }
+                        }
                         if(password_verify($pass,$line[2]) == true){
                             $_SESSION['name'] = $line[0];
-                            header("Location:customers/customer.php?$username");
+                            header("Location:customers/customer.php");
                         }
                         else{
                             $err[] = "wrong  password";
