@@ -6,7 +6,7 @@ if(!isset($_SESSION['name'])){
     header("Location:../404.php");
 }
 else{
-
+    
     require("../../private/adminhandler.php");
 }
 
