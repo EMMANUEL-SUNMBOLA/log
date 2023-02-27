@@ -7,9 +7,10 @@
 <li>I made a system to save customers information to a file after they signup</li>
 <li>Log in system added , now registered customers can visit protected page</li>
 <li>I've begun merging PROJECT-C-9 with the new signup and login system</li>
+<li>Admin page added (for adding product images, prices & description to the page without code</li>
 </ul>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ul>
-<li>I'll add an admin page where the admin can add product images ,prices ,and description</li>
+<li>I will add a feature to display every image uploaded by the admin automatically at the product page</li>
 <li>In the future I'll switch the  file (txt) for a database (sql/sql lite)</li>
 </ul>
