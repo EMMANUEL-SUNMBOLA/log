@@ -1,6 +1,6 @@
 <?php
  require("../private/reg.php");
- require("head.php");
+ require("head2.php");
  ?>
 <body>
     <?php

@@ -19,6 +19,7 @@
             <input type="password" placeholder="PASSWORD" name="pass"> <br>
             <button type="submit" name="log">Login</button>
             <p>Don't have an account ?<a href="signup.php">sign-up</a></p>
+            <p><a href="secure.php">ADMIN</a></p>
         </form>
     </div>
 </body>

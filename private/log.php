@@ -12,10 +12,13 @@ $err = [];
             $err[] = "please fill password";
         }
 
-        if(($userid == "admin") && ($pass == "10000001")){
-            $_SESSION['name'] == $userid;
-            header("Location:customers/admin.php");
-        }elseif(empty($err)){
+        // if(($userid == "admin") && ($pass == "10000001")){
+        //     $_SESSION['name'] == $userid;
+        //     header("Location:customers/admin.php");
+        // }
+        // else
+        
+        if(empty($err)){
             if(filter_var($userid,FILTER_VALIDATE_EMAIL) == TRUE){
                 $file = fopen("../private/text.txt","r");
                 while(!feof($file)){
