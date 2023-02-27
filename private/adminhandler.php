@@ -38,8 +38,8 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
                 }
                 // to write the price and description of the product
                 if( isset($desc) && isset($price) ){
-                    $file = fopen("public.txt","a+");
-                    $message = "\n" . $name . "|" . $price . "|" . $desc;
+                    $file = fopen("../../private/public.txt","a+");
+                    $message =  "\n" . $name . "|" . $price . "|" . $desc;
                     fwrite($file,$message);
                     fclose($file);
                 }
