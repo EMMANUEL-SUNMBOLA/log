@@ -1,1 +1,3 @@
-Screenshot (7).png|7000|product 1  really pretty  handpicked in belgium
+2006043.jpg|Lizard|7000|A beautiful lizard with multiple colors
+Screenshot (7).png||7000|product 1  really pretty  handpicked in belgium
+Screenshot (7).png||2000|product 1  really pretty  handpicked in belgium

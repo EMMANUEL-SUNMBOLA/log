@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-1.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-1.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">PINK FLOWER BUSH</h5>
                 <p class="card-text">BEST FLOWER TO BUY ON YOYR FIRST DATE</p>
@@ -20,7 +20,7 @@
 
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-2.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-2.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">amber sunflower bush</h5>
                 <p class="card-text">
@@ -33,7 +33,7 @@
 
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-3.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-3.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">red flower bush</h5>
                 <p class="card-text">
@@ -49,7 +49,7 @@
         <div class="row mt-4" id="rw-2">
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-4.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-4.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">rose bush</h5>
                 <p class="card-text">
@@ -62,7 +62,7 @@
 
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-5.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-5.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">white rose</h5>
                 <p class="card-text">
@@ -75,7 +75,7 @@
 
           <div class="col">
             <div class="card" style="width: 18rem">
-              <img src="images/img-6.jpg" class="card-img-top" alt="..." />
+              <img src="../images/img-6.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">rose bush</h5>
                 <p class="card-text">
@@ -87,11 +87,17 @@
           </div>
         </div>
       </div>
+      <img src="../private/productimages/2006043.jpg" alt="">
       <?php
-        $file = fopen("../private/public.txt","r");
+        $file = fopen("../../private/public.txt","r");
         while(!feof($file)){
             $lin = fgets($file);
             $line = explode("|",$lin);
+            echo '<div class="col">';
+            echo '<div class="card" style="width:18rem">';
+            echo '<img src="../../private/productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
+            echo '';
+
         }
         foreach($line as $cellary){
             

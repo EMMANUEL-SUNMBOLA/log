@@ -6,6 +6,7 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
 
         $desc = strip_tags($_POST["desc"]);
         $price = strip_tags($_POST["prc"]);
+        $prdname = strip_tags($_POST["prdname"]);
         $img = $_FILES["img"]; 
         $err =  $img["error"];
         $size = $img["size"];
@@ -39,7 +40,7 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
                 // to write the price and description of the product
                 if( isset($desc) && isset($price) ){
                     $file = fopen("../../private/public.txt","a+");
-                    $message =  "\n" . $name . "|" . $price . "|" . $desc;
+                    $message =  "\n" . $name . "|" . $prdname . "|" . $price . "|" . $desc;
                     fwrite($file,$message);
                     fclose($file);
                 }

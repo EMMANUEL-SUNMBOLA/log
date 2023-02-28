@@ -53,14 +53,7 @@
         </button>
     </form>
 </section>
-
-
-  
-    
-        
-    <?php
-    // include '../reviews.php';
-    // include '../card.php';
+  <?php
     include '../products.php';
     include '../footer.php'?>
 </body>
