@@ -14,3 +14,7 @@
 <ol>
 <li>In the future I'll switch the  file (txt) for a database (sql/sql lite)</li>
 </ol>
+<h1>What I learnt while making this project</h1>
+<ul>
+    <li>You can't include an entire folder , you have to loop through it</li>
+</ul>

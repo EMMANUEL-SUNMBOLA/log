@@ -1,7 +1,6 @@
 <?php
 $y = date('Y');
 $z = $y+3;
-include("../private/productimages");
 ?>
 <footer id="foot" class="text-center">
       whitefox &copy  codes 2022 - <?=$z?>
