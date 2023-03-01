@@ -117,3 +117,13 @@ button[name = "flo"]{
         color: #624ce0;
     }
 }
+.pbut{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #0700ee;
+    &:hover{
+        background-color: #fc5333;
+    }
+}

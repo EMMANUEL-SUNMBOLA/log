@@ -1,7 +1,7 @@
 <section class="p-5  text-uppercase" id="products">
       <h1 class="bg-danger text-center">here are some of our products</h1>
 
-      <div class="container bg-warning text-center">
+    <div class="container bg-warning text-center">
         <div class="row">
           <div class="col">
             <div class="card" style="width: 18rem">
@@ -75,32 +75,34 @@
               <div class="card-body">
                 <h5 class="card-title">rose bush</h5>
                 <p class="card-text">
-                  the best han-picked rose sticks from our garden
+                  the best hand-picked rose sticks from our garden
                 </p>
                 <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
               </div>
             </div>
           </div>
+        
         </div>
-      </div>
-      <!-- <img src="../private/productimages/2006043.jpg" alt=""> -->
-      <?php
-      // require("../../private/productimages");
-      // foreach(glob("private/productimages") as $cellary){
-      //   include("$cellary");
-      // }
-      $file = fopen("../private/public.txt","r");
-      while(!feof($file)){
-            $lin = fgets($file);
-            $line = explode("|",$lin);
-            echo '<div class="col">';
-            echo '<div class="card" style="width:18rem">';
-            echo '<img src="productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
-            echo '<h5 class="card-title">' . $line[1] . '</h5>';
-            echo '<p class="card-text">' . $line[3] . '</p>';
-            echo '<button class="price"> ' . $line[2] . '</button>';
 
+      <?php
+    //   echo '<div class="row mt-4" id="rw-2">';      
+    $file = fopen("../private/public.txt","r");
+    if(!empty(fgets($file))){
+      while(!feof($file)){
+          $lin = fgets($file);
+          $line = explode("|",$lin);
+          echo '<div class="col">';
+          echo '<div class="card" .style="width:18rem">';
+          echo '<img src="productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
+          echo '<h5 class="card-title">' . $line[1] . '</h5>';
+          echo '<p class="card-text">' . $line[3] . '</p>';
+          echo '<button class="pbut"><i class="fa-solid fa-naira-sign"> ' . $line[2] . '</i></button>';
+          echo '</div></div>';
+          
         }
+    }
+        // echo '</div>';
       ?>
-      <img src="../../private/productimages/Screenshot (1).png" alt="">
+    </div>
+
     </section>

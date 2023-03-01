@@ -14,14 +14,7 @@ main button{
   border: 1vh solid pink;
   background-color: rgba(220,190,190,);
 }
-.pbut{
-  border:  1px solid black;
-  width: 25px;
-  height: 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 10px 10px;
-}
+
 #products button{
   border: 1px solid navy;
   border-radius: 4%;

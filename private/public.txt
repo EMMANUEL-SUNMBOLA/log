@@ -1,4 +1,1 @@
-meme.png|meme|5000|phpmeme
-2006043.jpg|Lizard|2000|alien wallpaper
-2006043.jpg|Lizard|2000|alien wallpaper
-404page - Copy (2).png|Lizard|2000|code
+alien1.jpg|alien ware wall|200|a beautiful dark wallpaper

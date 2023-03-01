@@ -9,7 +9,7 @@
               <div class="card-body">
                 <h5 class="card-title">PINK FLOWER BUSH</h5>
                 <p class="card-text">BEST FLOWER TO BUY ON YOYR FIRST DATE</p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
                 <p class="card-text">
                   has a very nice fragrance and is very appealing
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
                 <p class="card-text">
                   very bright and vibrantcan be gifeted in different occasions
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
                 <p class="card-text">
                   the best han-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@
                 <p class="card-text">
                   the best han-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@
                 <p class="card-text">
                   the best hand-picked rose sticks from our garden
                 </p>
-                <a href="login.php" class="pbut"><i class="fa-solid fa-naira-sign"></i>4000</a>
+                <button class="pbut"><i class="fa-solid fa-naira-sign">4000</i></button>
               </div>
             </div>
           </div>
@@ -85,13 +85,14 @@
         </div>
 
       <?php
-    //   echo '<div class="row mt-4" id="rw-2">';
+      echo '<div class="row mt-4" id="rw-2">';
       $file = fopen("../../private/public.txt","r");
+      if(!empty(fgets($file))){
       while(!feof($file)){
           $lin = fgets($file);
           $line = explode("|",$lin);
           echo '<div class="col">';
-          echo '<div class="card" .style="width:18rem">';
+          echo '<div class="card" style="width:18rem;">';
           echo '<img src="../productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
           echo '<h5 class="card-title">' . $line[1] . '</h5>';
           echo '<p class="card-text">' . $line[3] . '</p>';
@@ -99,7 +100,8 @@
           echo '</div></div>';
           
         }
-        // echo '</div>';
+        echo '</div>';
+      }
       ?>
     </div>
 
