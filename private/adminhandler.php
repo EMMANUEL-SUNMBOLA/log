@@ -18,7 +18,8 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
         if(isset($img)){
             // to check the file chose
         if($type == "image/jpg" || $type == "image/jpeg" || $type == "image/png" || $type == "image/webp" || $type == "image/gif"){
-            $dest = __DIR__ . '/productimages/' . $name;
+            // C:\Users\EMMANUEL\Desktop\log\public\productimages
+            $dest = __DIR__ . '../public/productimages/' . $name;
             $move = move_uploaded_file($tmp,$dest);
             if($err == 0){
                 $prob[] = 'file uploaded successfully ✔️';

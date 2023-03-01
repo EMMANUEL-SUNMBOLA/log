@@ -141,19 +141,18 @@
       </div>
       <img src="../private/productimages/2006043.jpg" alt="">
       <?php
-      require("../../private/productimages");
+      // require("../../private/productimages");
         $file = fopen("../../private/public.txt","r");
         while(!feof($file)){
             $lin = fgets($file);
             $line = explode("|",$lin);
             echo '<div class="col">';
             echo '<div class="card" style="width:18rem">';
-            echo '<img src="../../private/productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
-            echo '';
+            echo '<img src="../productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
+            echo '<h5 class="card-title">' . $line[1] . '</h5>';
+            echo '<p class="card-text">' . $line[2] . '</p>';
+            echo '<button class="price"> ' . $line[3] . '</button>';
 
-        }
-        foreach($line as $cellary){
-            
         }
       ?>
       <img src="../../private/productimages/Screenshot (1).png" alt="">
