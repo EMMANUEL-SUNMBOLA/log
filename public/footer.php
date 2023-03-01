@@ -4,7 +4,6 @@ $z = $y+3;
 ?>
 <footer id="foot" class="text-center">
       whitefox &copy  codes 2022 - <?=$z?>
-      <img src="../private/productimages/meme.png" alt="balablu">
     </footer>
     <!-- JavaScript Bundle with Popper -->
     <script
