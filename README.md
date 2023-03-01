@@ -17,5 +17,5 @@
 <h1>What I learnt while making this project</h1>
 <ul>
     <li>You can't include/require an entire folder , you have to loop through it's content</li>
-    <li>Splitting a project into smaller bits makes it faster to finidh</li>
+    <li>Splitting a project into smaller bits makes it faster to finish</li>
 </ul>
