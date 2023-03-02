@@ -96,8 +96,9 @@
           echo '<img src="../productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
           echo '<h5 class="card-title">' . $line[1] . '</h5>';
           echo '<p class="card-text">' . $line[3] . '</p>';
-          echo '<button class="pbut"><i class="fa-solid fa-naira-sign"> ' . $line[2] . '</i></button>';
-          echo '</div></div>';
+          echo '<form method="post" action"../private/orders.php>';
+          echo '<button class="pbut" name="' . $line[1] . '"><i class="fa-solid fa-naira-sign"> ' . $line[2] . '</i></button>';
+          echo '</form></div></div>';
           
         }
         echo '</div>';
