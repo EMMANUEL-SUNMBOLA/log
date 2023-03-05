@@ -16,7 +16,7 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
         $prob = [];
         // echo $type;
         if(isset($img)){
-            // to check the file chose
+            // to check the file chosen
         if($type == "image/jpg" || $type == "image/jpeg" || $type == "image/png" || $type == "image/webp" || $type == "image/gif"){
             $dest =  '../productimages/' . $name;
             $move = move_uploaded_file($tmp,$dest);
