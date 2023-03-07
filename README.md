@@ -14,7 +14,7 @@
 <ol>
 <li>I'm making a system to take orders from customers that are logged in
 <ul>
-<li>I will do this by adding a custom name to each buy button</li>
+<li>I will do this by adding a custom name to each buy button  <ol><li>I underestimated the complexity of this idea so it will be a while before I finally complete it.</li></ol></li>
 <li>Then make a customer folder where every buy button's name will be saved</li>
 <li>And the names and products to be bought will be displayed at the admin page </li>
 </ul>
