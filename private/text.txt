@@ -3,3 +3,4 @@ shade|johndoe@gmail.com|$2y$10$WWDKU.KFX9UewUeI3Yd2yerLbhYdmIikewjv0YvL22DXdfZoI
 powerbank|adedayoemmanuel729@gmail.com|$2y$10$8pS9C3Lav5vFLJBbEIOJpey1iOJJBfL/QifU4EefMf.q/vuLTPtjG
 caveman|adedayoforgit@gmail.com|$2y$10$6gh1UutwNyoRF0QDI9HTsuU3j5k96ifbgoduyOukQgxTUyE/Smt0S
 Ewatomi|ewaoluwa28@gmail.com|$2y$10$Ap512alNHisl/NwMPkgV4eKheydSQ9VIvDyuFHouXvKdh2amTFjq6
+shoegbem|example124@gmail.com|$2y$10$xojMXZNIoChktlUGmCAKuOvEXD/XuLpWyVj8d8gir2FC791a4oCLa

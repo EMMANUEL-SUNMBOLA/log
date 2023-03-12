@@ -1,6 +1,7 @@
 <?php 
         $err = [];
     if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["reg"])){
+        include("functions.php");
         $username = strip_tags($_POST["user"]);
         $pwd = strip_tags($_POST["pass"]);
         $pwd2 = strip_tags($_POST["pass2"]);
@@ -12,23 +13,28 @@
             $err[] = "username should be at least 8 characters long";
         }
 
-        if(empty($pwd)){
-            $err[] = "please fill password area";
-        }
-        elseif(strlen($pwd) < 8){
-            $err[] = "password too short";
-        }
-        elseif($pwd !== $pwd2){
-            $err[] = "confirm your password";
+        // if(empty($pwd)){
+        //     $err[] = "please fill password area";
+        // }
+        // elseif(strlen($pwd) < 8){
+        //     $err[] = "password too short";
+        // }
+        // elseif($pwd !== $pwd2){
+        //     $err[] = "confirm your password";
+        // }
+
+        if(!Pverify($pwd,$pwd2)){
+            $err[] = "check passwords";
         }
 
-        if(empty($email)){
-            $err[] = "email can't be left empty";
+        if(!emailValid($email)){
+            // $err[] = "email can't be left empty";
+            $err[] = "eemail not right";
         }
         // FILTER_VALIDATE_EMAIL
-       elseif(filter_var($email,FILTER_VALIDATE_EMAIL) == false){
-        $err[] = "invalid email <br>";
-       }
+    //    elseif(filter_var($email,FILTER_VALIDATE_EMAIL) == false){
+    //     $err[] = "invalid email <br>";
+    //    }
        
        $file = fopen("../private/text.txt","a+");
        // loop through to check if the username and / or the email are taken
