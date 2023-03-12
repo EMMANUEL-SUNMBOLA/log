@@ -8,7 +8,8 @@
 <li>Log in system added , now registered customers can visit protected page</li>
 <li>I've begun merging PROJECT-C-9 with the new signup and login system</li>
 <li>Admin page added (for adding product images, prices & description to the page without code)</li>
-<li>Amin page functional</li>
+<li>Admin page functional</li>
+<li>Adding OOP to improve the efficiency of the code</li>
 </ol>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ol>
