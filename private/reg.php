@@ -1,6 +1,7 @@
 <?php 
         $err = [];
     if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["reg"])){
+        include("db.php");
         include("functions.php");
         $username = strip_tags($_POST["user"]);
         $pwd = strip_tags($_POST["pass"]);
@@ -36,32 +37,34 @@
     //     $err[] = "invalid email <br>";
     //    }
        
-       $file = fopen("../private/text.txt","a+");
-       // loop through to check if the username and / or the email are taken
-       // we won't check for passwordd because more than 1 person can use a password
-       // I think i should check for only gmail 🤔
-           while(!feof($file)){
-               $lin = fgets($file);
-               if($lin == null){
-                $lin = "end|of|file";
-               }
-               $line = explode("|",$lin);
-            //    var_dump($line);
-               if($username == $line[0]){
-                $err[] = "username is taken"; 
-               }
-               if($email == $line[1]){
-                $err[] = "Email has already been used"; 
-               }
-           }
+    //    $file = fopen("../private/text.txt","a+");
+    //    // loop through to check if the username and / or the email are taken
+    //    // we won't check for passwordd because more than 1 person can use a password
+    //    // I think i should check for only gmail 🤔
+    //        while(!feof($file)){
+    //            $lin = fgets($file);
+    //            if($lin == null){
+    //             $lin = "end|of|file";
+    //            }
+    //            $line = explode("|",$lin);
+    //         //    var_dump($line);
+    //            if($username == $line[0]){
+    //             $err[] = "username is taken"; 
+    //            }
+    //            if($email == $line[1]){
+    //             $err[] = "Email has already been used"; 
+    //            }
+    //        }
        if(empty($err)){
-        $file = fopen("../private/text.txt","a+");
+        // $file = fopen("../private/text.txt","a+");
         $pwd2 = password_hash($pwd,PASSWORD_DEFAULT);
-        $message = "\n" . $username . "|" . $email . "|" . $pwd2;
-        fwrite($file,$message);
-        fclose($file);
-        echo '<div class="errs"> youv`e been registered successfully <br> <a href="login.php">Login...</a></div>';
-        // header("locatio n:../private/customer.php");
+        // $message = "\n" . $username . "|" . $email . "|" . $pwd2;
+        // fwrite($file,$message);
+        // fclose($file);
+        // echo '<div class="errs"> youv`e been registered successfully <br> <a href="login.php">Login...</a></div>';
+        // // header("locatio n:../private/customer.php");
+
+        insert($conn,$dbtab,$username,$pwd2,$email);
        }
     }
     else{

@@ -20,7 +20,7 @@ function Pverify($pass,$pass2){
 }
 
 function insert($conn,$dbtab,$username,$password,$email){
-  $msg = "INSERT INTO $dbtab(username ,email ,pwd) ('$username', '$email', '$password')";
+  $msg = "INSERT INTO $dbtab(username ,email ,pwd) VALUES ('$username', '$email', '$password')";
 
   if(mysqli_query($conn,$msg)){
     return "saved";

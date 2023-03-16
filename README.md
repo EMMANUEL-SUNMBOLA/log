@@ -9,7 +9,7 @@
 <li>I've begun merging PROJECT-C-9 with the new signup and login system</li>
 <li>Admin page added (for adding product images, prices & description to the page without code)</li>
 <li>Admin page functional</li>
-<li>Now customers information and post infromations will be saved to a database 😁</li>
+<li>New customers information and post infromations will be saved to a database 😁</li>
 </ol>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ol>
@@ -24,5 +24,5 @@
 <h1>What I learnt while making this project</h1>
 <ul>
     <li>You can't include/require an entire folder , you have to loop through it's content</li>
-    <li>Splitting a project into smaller bits makes it faster to finish</li>
+    <li>Splitting a project into smaller bits makes it easier to complete</li>
 </ul>
