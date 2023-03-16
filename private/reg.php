@@ -55,6 +55,14 @@
     //             $err[] = "Email has already been used"; 
     //            }
     //        }
+        if(dbverifyE($conn,$dbtab,$email) == "true1"){
+            $err[] = "email has been used";
+        }
+
+        if(dbverifyU($conn,$dbtab,$username) == "true1"){
+            $err[] = "sorry username taken";
+        }
+        
        if(empty($err)){
         // $file = fopen("../private/text.txt","a+");
         $pwd2 = password_hash($pwd,PASSWORD_DEFAULT);

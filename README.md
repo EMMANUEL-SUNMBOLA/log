@@ -10,6 +10,7 @@
 <li>Admin page added (for adding product images, prices & description to the page without code)</li>
 <li>Admin page functional</li>
 <li>New customers information and post infromations will be saved to a database 😁</li>
+<li>Duplicate emails & usernames won't be saved to the database</li>
 </ol>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ol>
