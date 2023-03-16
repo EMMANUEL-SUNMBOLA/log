@@ -9,7 +9,7 @@
 <li>I've begun merging PROJECT-C-9 with the new signup and login system</li>
 <li>Admin page added (for adding product images, prices & description to the page without code)</li>
 <li>Admin page functional</li>
-<li>Adding OOP to improve the efficiency of the code</li>
+<li>Now customers information and post infromations will be saved to a database 😁</li>
 </ol>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ol>
@@ -18,7 +18,6 @@
 <li>I will do this by adding a custom name to each buy button  <ol><li>I underestimated the complexity of this idea so it will be a while before I finally complete it.</li></ol></li>
 <li>Then make a customer folder where every buy button's name will be saved</li>
 <li>And the names and products to be bought will be displayed at the admin page </li>
-<li> Switching the  file (txt) for a database (sql/sql lite) p.s: to be completed soon</li>
 </ul>
 </li>
 </ol>

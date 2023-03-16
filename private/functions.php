@@ -19,3 +19,11 @@ function Pverify($pass,$pass2){
     return false;
 }
 
+function insert($conn,$dbtab,$username,$password,$email){
+  $msg = "INSERT INTO $dbtab(username ,email ,pwd) ('$username', '$email', '$password')";
+
+  if(mysqli_query($conn,$msg)){
+    return "saved";
+  }
+  return "something wen't wrong";
+}
