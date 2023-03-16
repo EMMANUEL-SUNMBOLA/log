@@ -52,15 +52,23 @@ function dbverifyU($conn,$dbtab,$username){
     return false;
   }
 }
-function dbverifyP($conn,$dbtab,$pwd){
-  $msg = "SELECT pwd FROM $dbtab";
+function dbverifyP($conn,$dbtab,$pwd,$username){
+  $msg = "SELECT username, pwd FROM $dbtab";
   $result = $conn -> query($msg);
   if($result -> num_rows > 0){
     while($data = $result -> fetch_assoc()){
+      if($data["username"] == $username){
       if($data["pwd"] == $pwd){
-        return "true1";
+        if(password_verify($pwd,$data) == true){
+
+          return "true1";
+        }
       }
-      return false;
+    }else{
+      return "err 404";
     }
+      
+    }
+    return false;
   }
 }
