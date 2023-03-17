@@ -38,11 +38,17 @@ if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
                     $prob[] = $name;
                 }
                 // to write the price and description of the product
-                if( isset($desc) && isset($price) ){
-                    $file = fopen("../../private/public.txt","a+");
-                    $message =  "\n" . $name . "|" . $prdname . "|" . $price . "|" . $desc;
-                    fwrite($file,$message);
-                    fclose($file);
+                if( isset($desc) && isset($price)  && isset($prdname) ){
+                    // $file = fopen("../../private/public.txt","a+");
+                    // $message =  "\n" . $name . "|" . $prdname . "|" . $price . "|" . $desc;
+                    // fwrite($file,$message);
+                    // fclose($file);
+                    // insert_post($conn2,$dbtab2,$)
+                    if(insert_post($conn2,$dbtab2,$name,$prdname,$desc,$price)){
+                        $prob[] = "post uploaded";
+                    }else{
+                        $prob[] = "something wen't wrong";
+                    }
                 }
                 else{
                     $prob[] = "please leave no input empty";

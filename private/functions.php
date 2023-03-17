@@ -81,8 +81,8 @@ function dbverifyP($conn,$dbtab,$pwd,$userid){
   }
 }
 
-function insert_post($conn,$dbtab2,$subject,$content,$price){
-  $msg = "INSERT INTO $dbtab2 (subject, content, price) VALUES ('$subject', '$content', '$price'";
+function insert_post($conn,$dbtab2,$name,$subject,$content,$price){
+  $msg = "INSERT INTO $dbtab2 (loc, subject, content, price) VALUES ('$name','$subject', '$content', '$price'";
  
   if(mysqli_query($conn,$msg)){
     return true;
