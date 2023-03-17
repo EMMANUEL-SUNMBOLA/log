@@ -52,23 +52,78 @@ function dbverifyU($conn,$dbtab,$username){
     return false;
   }
 }
-function dbverifyP($conn,$dbtab,$pwd,$username){
-  $msg = "SELECT username, pwd FROM $dbtab";
-  $result = $conn -> query($msg);
-  if($result -> num_rows > 0){
-    while($data = $result -> fetch_assoc()){
-      if($data["username"] == $username){
-      if($data["pwd"] == $pwd){
-        if(password_verify($pwd,$data) == true){
+/**
+ * Summary of dbverifyP
+ * @param mixed $conn
+ * @param mixed $dbtab
+ * @param mixed $pwd
+ * @param mixed $username
+ * @return int
+ */
+// function dbverifyP($conn,$dbtab,$pwd,$userid){
+//   $end = '';
+//     if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
+//     $msg = "SELECT * FROM $dbtab WHERE email = '$userid";
+//     $result = $conn -> query($msg);
+//     if($result -> num_rows > 0){
+//       $data = $result -> fetch_assoc();
+//       // while($data = $result -> fetch_assoc()){
+//         if($data["email"] == $userid){
+//           if(password_verify($pwd,$data['pwd'])){
+//             $end = 1;
+//           }
+//           else{
+//             $end = 101;
+//           }
+//         }else{
+//           $end = 404;
+//         }
+//       // }
+//     }
+//   }else{
+//     $msg = "SELECT * FROM  $dbtab WHERE username = '$userid'";
+//     $result = $conn -> query($msg);
+//     if($result -> num_rows > 0){
 
-          return "true1";
-        }
-      }
-    }else{
-      return "err 404";
+//     }
+//   }
+//   return $end;
+// }
+
+function dbverifyP($conn,$dbtab,$pwd,$userid){
+  if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
+    $msg = "SELECT * FROM $dbtab WHERE email = '$userid";
+    $result = $conn -> query($msg);
+    $data = $result -> fetch_assoc();
+    if(password_verify($pwd,$data['pwd']) == true){
+      return true;
+    } else{
+      return false;
     }
-      
+  }else{
+    $msg = "SELECT * FROM $dbtab WHERE username = '$userid'";
+    $result = $conn -> query($msg);
+    $data = $result -> fetch_assoc();
+    foreach($data as $key => $value){
+    
+    if(password_verify($pwd,$data['pwd']) == true){
+      return true;
+    } else{
+      return false;
     }
-    return false;
   }
+  }
+    return false;
+  
 }
+
+// function vhmc($conn,$dbtab,$id){
+//   $msg = "SELECT * FROM $dbtab WHERE id = '$id'";
+//   $result = $conn -> query($msg);
+//   $data = $result -> fetch_assoc();
+//   foreach ($data as $key => $value) {
+//       # code...
+//       echo $key . '->' . $value;
+//   }
+
+// }

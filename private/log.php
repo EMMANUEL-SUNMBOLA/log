@@ -13,67 +13,26 @@ $err = [];
         if(empty($pass)){
             $err[] = "please fill password";
         }
-
-        // if(($userid == "admin") && ($pass == "10000001")){
-        //     $_SESSION['name'] == $userid;
-        //     header("Location:customers/admin.php");
-        // }
-        // else
-        
-    //     if(empty($err)){
-    //         if(filter_var($userid,FILTER_VALIDATE_EMAIL) == TRUE){
-    //             $file = fopen("../private/text.txt","r");
-    //             while(!feof($file)){
-    //                 $lin = fgets($file);
-    //                 if($lin == null){
-    //                     $lin = "end|of|file";
-    //                 }
-    //                 $line = explode("|",$lin);
-    //                 if($userid == $line[1]){
-    //                     if(password_verify($pass,$line[2]) == true){
-    //                         $_SESSION['name'] = $line[0];
-    //                         header("Location:customers/customer.php");
-    //                     }
-    //                     else{
-    //                         $err[] = "wrong  password";
-    //                     }
-    //                 }
-    //                 else{
-    //                     $err[] = "Inavlid email";
-    //                 }
-    //             }
-    //             fclose($file);
-    //         }
-    //         else{
-    //             $file = fopen("../private/text.txt","r");
-    //             while(!feof($file)){
-    //                 $lin = fgets($file);
-    //                 if($lin == null){
-    //                     $lin = "end|of|file";
-    //                 }
-    //                 $line = explode("|",$lin);
-    //                 if($userid == $line[0]){
-    //                    if(password_verify($pass,$line[2]) == true){
-    //                     $_SESSION['name'] = $line[0];
-    //                         header("Location:customers/customer.php");
-    //                    }
-    //                    else{
-    //                     $err[] = "wrong  password";
-    //                    }
-    //                 }
-    //                 else{
-    //                     $err[] = "Inavlid username";
-    //                 }
-    //             }
-    //             fclose($file);
-    //         }
-    //     }
+    //     $pver = dbverifyP($conn,$dbtab,$pass,$userid);
+    // if($pver == 1){
+    //     header("Location:customers/customer.php");
     // }
+    // elseif($pver == 404){
+    //     $err[] = "account not found check username or signup";
+    // }
+    // elseif($pver == 101){
+    //     $err[] = "invalid password";
+    // }
+    // else{
+    //     $err[] = "something wen't wrong";
+    // }
+    
+    if(dbverifyP($conn,$dbtab,$pass,$userid) == false){
+        $err[] = "CHECK PASSWORD OR USERNAME";
+    }    
 
-    if(dbverifyP($conn,$dbtab,$pass,$userid) == "true1"){
+    if(empty($err)){
+        $_SESSION["name"] = $userid;
         header("Location:customers/customer.php");
-    }
-    else{
-        $err[] = "something wen't wrong";
     }
 }

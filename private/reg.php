@@ -68,11 +68,11 @@
         $pwd2 = password_hash($pwd,PASSWORD_DEFAULT);
         // $message = "\n" . $username . "|" . $email . "|" . $pwd2;
         // fwrite($file,$message);
+        insert($conn,$dbtab,$username,$pwd2,$email);
         // fclose($file);
-        // echo '<div class="errs"> youv`e been registered successfully <br> <a href="login.php">Login...</a></div>';
+        echo '<div class="errs"> you`ve been registered successfully__<br> <a href="login.php">Login...</a></div>';
         // // header("locatio n:../private/customer.php");
 
-        insert($conn,$dbtab,$username,$pwd2,$email);
        }
     }
     else{
