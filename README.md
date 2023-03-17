@@ -9,8 +9,9 @@
 <li>I've begun merging PROJECT-C-9 with the new signup and login system</li>
 <li>Admin page added (for adding product images, prices & description to the page without code)</li>
 <li>Admin page functional</li>
-<li>New customers information and post infromations will be saved to a database 😁</li>
+<li>New customers information and post infromations will be saved to a database </li>
 <li>Duplicate emails & usernames won't be saved to the database</li>
+<li>Password verification successful</li>
 </ol>
 <h1><u>FEATURES TO BE EXPECTED</u></h1>
 <ol>

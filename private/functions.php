@@ -52,78 +52,31 @@ function dbverifyU($conn,$dbtab,$username){
     return false;
   }
 }
-/**
- * Summary of dbverifyP
- * @param mixed $conn
- * @param mixed $dbtab
- * @param mixed $pwd
- * @param mixed $username
- * @return int
- */
-// function dbverifyP($conn,$dbtab,$pwd,$userid){
-//   $end = '';
-//     if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
-//     $msg = "SELECT * FROM $dbtab WHERE email = '$userid";
-//     $result = $conn -> query($msg);
-//     if($result -> num_rows > 0){
-//       $data = $result -> fetch_assoc();
-//       // while($data = $result -> fetch_assoc()){
-//         if($data["email"] == $userid){
-//           if(password_verify($pwd,$data['pwd'])){
-//             $end = 1;
-//           }
-//           else{
-//             $end = 101;
-//           }
-//         }else{
-//           $end = 404;
-//         }
-//       // }
-//     }
-//   }else{
-//     $msg = "SELECT * FROM  $dbtab WHERE username = '$userid'";
-//     $result = $conn -> query($msg);
-//     if($result -> num_rows > 0){
-
-//     }
-//   }
-//   return $end;
-// }
-
 function dbverifyP($conn,$dbtab,$pwd,$userid){
   if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
-    $msg = "SELECT * FROM $dbtab WHERE email = '$userid";
+    $msg = "SELECT pwd FROM $dbtab WHERE email = '$userid";
     $result = $conn -> query($msg);
     $data = $result -> fetch_assoc();
-    if(password_verify($pwd,$data['pwd']) == true){
+    $savepwd = mysqli_real_escape_string($conn,$pwd);
+    if(password_verify($savepwd,$data['pwd'])){
       return true;
     } else{
       return false;
     }
   }else{
-    $msg = "SELECT * FROM $dbtab WHERE username = '$userid'";
+    $msg = "SELECT pwd FROM $dbtab WHERE username = '$userid'";
     $result = $conn -> query($msg);
-    $data = $result -> fetch_assoc();
-    foreach($data as $key => $value){
-    
-    if(password_verify($pwd,$data['pwd']) == true){
-      return true;
-    } else{
-      return false;
+
+    if($result -> num_rows > 0){
+      $data = $result -> fetch_assoc();
+      $savepwd = mysqli_real_escape_string($conn,$pwd);
+      if(password_verify($savepwd,$data['pwd'])){
+        return true;
+      } else{
+        return false;
+      }
+    }else{
+      return "404";
     }
   }
-  }
-    return false;
-  
 }
-
-// function vhmc($conn,$dbtab,$id){
-//   $msg = "SELECT * FROM $dbtab WHERE id = '$id'";
-//   $result = $conn -> query($msg);
-//   $data = $result -> fetch_assoc();
-//   foreach ($data as $key => $value) {
-//       # code...
-//       echo $key . '->' . $value;
-//   }
-
-// }
