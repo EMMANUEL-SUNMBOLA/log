@@ -1,9 +1,9 @@
 <?php
 
 
-
 if(($_SERVER['REQUEST_METHOD']) && isset($_POST['admin_but'])){
-
+    
+        include("functions.php");
         $desc = strip_tags($_POST["desc"]);
         $price = strip_tags($_POST["prc"]);
         $prdname = strip_tags($_POST["prdname"]);

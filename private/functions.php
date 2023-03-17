@@ -23,9 +23,9 @@ function insert($conn,$dbtab,$username,$password,$email){
   $msg = "INSERT INTO $dbtab(username ,email ,pwd) VALUES ('$username', '$email', '$password')";
 
   if(mysqli_query($conn,$msg)){
-    return "saved";
+    return true;
   }
-  return "something wen't wrong";
+  return false;
 }
 
 function dbverifyE($conn,$dbtab,$email){
@@ -79,4 +79,13 @@ function dbverifyP($conn,$dbtab,$pwd,$userid){
       return "404";
     }
   }
+}
+
+function insert_post($conn,$dbtab2,$subject,$content,$price){
+  $msg = "INSERT INTO $dbtab2 (subject, content, price) VALUES ('$subject', '$content', '$price'";
+ 
+  if(mysqli_query($conn,$msg)){
+    return true;
+  }
+  return false;
 }
