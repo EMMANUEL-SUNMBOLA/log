@@ -46,7 +46,7 @@ function dbverifyU($conn,$dbtab,$username){
   if($result -> num_rows > 0){
     while($data = $result -> fetch_assoc()){
       if($data["username"] == $username){
-        return "true1";
+        return true;
       }
     }
     return false;

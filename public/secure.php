@@ -1,11 +1,27 @@
 <?php
 session_start();
 if(($_SERVER["REQUEST_METHOD"]) && (isset($_POST["adminbut"]))){
-    $name = $_POST["key"];
+
+    include("../private/db.php");
+    include("../private/functions.php");
+    $admin = $_POST["key"];
     $pass = $_POST["pass"];
-    if($pass == 1000001){
+
+    if(empty($admin)){
+        $issues[] = "please fill admin key field";
+    }
+    if(empty($pass)){
+        $issues[] = "please fill password field";
+    }
+    if(dbverifyU($conn,$dbtab3,$admin)){
         $_SESSION['name'] = 'admin';
-        header("Location:customers/admin.php");
+        if(dbverifyP($conn,$dbtab3,$pass,$admin)){
+            header("Location:customers/admin.php");
+        }else{
+            $issues[] = "invalid password chief";
+        }
+    }else{
+        $issues[] = "invalid username pls signup for admin program";
     }
 }
 
@@ -23,5 +39,14 @@ if(($_SERVER["REQUEST_METHOD"]) && (isset($_POST["adminbut"]))){
             <button name="adminbut" type="submit">Login</button>
         </form>
     </div>
+    <?php
+        if(isset($_POST["adminbut"]) && !empty($issues)){
+            echo '<div class="errs">';
+            foreach($issues as $cellary){
+                echo $cellary;
+            }
+            echo '</div>';
+        }
+    ?>
 </body>
 </html>
