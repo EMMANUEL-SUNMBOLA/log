@@ -13,9 +13,9 @@ if(($_SERVER["REQUEST_METHOD"]) && (isset($_POST["adminbut"]))){
     if(empty($pass)){
         $issues[] = "please fill password field";
     }
-    if(dbverifyU($conn,$dbtab3,$admin)){
+    if(dbverifyU($conn,$dbtab3,$admin) == true){
         $_SESSION['name'] = 'admin';
-        if(dbverifyP($conn,$dbtab3,$pass,$admin)){
+        if(dbverifyA($conn,$dbtab3,$pass,$admin)){
             header("Location:customers/admin.php");
         }else{
             $issues[] = "invalid password chief";
