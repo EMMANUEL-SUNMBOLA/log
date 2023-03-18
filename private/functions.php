@@ -117,3 +117,24 @@ function insert_post($conn,$dbtab2,$name,$subject,$content,$price){
   }
   return false;
 }
+
+function Prddisp($conn,$tab,$dist){
+  // $dist is to allow me to use this function in different pages by specifying the dots if you grab ...
+  $msg = "SELECT * FROM $tab";
+  $result = $conn -> query($msg);
+  
+  if($result -> num_rows > 0){
+    echo '<div class="gridcontainer">';
+    while($data = $result -> fetch_assoc()){
+      echo '<div class="card" style="width: 18rem">';
+      echo '<img src="' . $dist . $data['loc'] . '" alt="' . $data['loc'] . '" class="card-img-top">';
+      echo '<div class="card-body">';
+      echo '<h5 class="card-title">' . $data['subject'] . '</h5>';
+      echo '<p class="card-text">' . $data['content'] . '</p>';
+      echo '<form method="post" action"../private/orders.php>';
+      echo '<button class="pbut" name=""><i class="fa-solid fa-naira-sign"> ' . $data['pice'] . '</i></button>';
+      echo '</form></div></div>';
+    }
+    echo '</div>';
+  }
+}

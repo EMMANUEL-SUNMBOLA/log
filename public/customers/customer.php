@@ -32,6 +32,8 @@
         <span>
             <?php 
             require("../../private/log.php");
+            require("../../private/functions.php");
+            require("../../private/db.php");
     
             if(!isset($_SESSION['name'])){
                 header("Location:../404.php");

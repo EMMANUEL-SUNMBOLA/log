@@ -1,3 +1,7 @@
+<?php
+  include("../private/functions.php");
+  include("../private/db.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

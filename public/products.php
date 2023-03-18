@@ -106,4 +106,8 @@
       ?>
     </div>
 
+    <?php
+    $dist = "../../productimages/";
+    Prddisp($conn,$dbtab2,$dist)
+    ?>
     </section>
