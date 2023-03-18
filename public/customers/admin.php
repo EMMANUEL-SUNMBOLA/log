@@ -48,9 +48,9 @@ else{
             <h1>Add more products</h1>
             <label for="img">add image</label>
             <input type="file" name="img"  id="" accept="image/*"><br>
-            <input type="text" placeholder="PRICE" name="prc"><br>
             <input type="text" placeholder="PRODUCT NAME" name="prdname"><br>
             <input type="text" placeholder="DESCRIPTION" name="desc"><br>
+            <input type="text" placeholder="PRICE" name="prc"><br>
         <button type="submit" name="admin_but">SUBMIT</button>
         </form>
     </section>

@@ -54,7 +54,7 @@ function dbverifyU($conn,$dbtab,$username){
 }
 function dbverifyP($conn,$dbtab,$pwd,$userid){
   if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
-    $msg = "SELECT pwd FROM $dbtab WHERE email = '$userid";
+    $msg = "SELECT pwd FROM $dbtab WHERE email = '$userid'";
     $result = $conn -> query($msg);
     $data = $result -> fetch_assoc();
     $savepwd = mysqli_real_escape_string($conn,$pwd);
@@ -82,7 +82,7 @@ function dbverifyP($conn,$dbtab,$pwd,$userid){
 }
 function dbverifyA($conn,$dbtab,$pwd,$userid){
   if(filter_var($userid,FILTER_VALIDATE_EMAIL)){
-    $msg = "SELECT password FROM $dbtab WHERE email = '$userid";
+    $msg = "SELECT password FROM $dbtab WHERE email = '$userid'";
     $result = $conn -> query($msg);
     $data = $result -> fetch_assoc();
     $savepwd = mysqli_real_escape_string($conn,$pwd);
@@ -110,7 +110,7 @@ function dbverifyA($conn,$dbtab,$pwd,$userid){
 }
 
 function insert_post($conn,$dbtab2,$name,$subject,$content,$price){
-  $msg = "INSERT INTO $dbtab2 (loc, subject, content, price) VALUES ('$name','$subject', '$content', '$price'";
+  $msg = "INSERT INTO $dbtab2(loc, subject, content, pice) VALUES ('$name','$subject', '$content', '$price')";
  
   if(mysqli_query($conn,$msg)){
     return true;
