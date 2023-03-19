@@ -31,7 +31,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg text-bg-danger nabar-danger" id="nav">
       <div class="container">
-        <a href="" class="navbar-brand">FLOWERLY</a>
+        <a href="" class="navbar-brand">FLOWERLY2</a>
 
         <button
           class="navbar-toggler"
