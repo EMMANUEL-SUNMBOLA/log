@@ -126,3 +126,21 @@ section{
     color: white;
     cursor: none;
 }
+
+.gridcontainer{
+    width: 95%;
+    margin: 9px auto;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15%;
+}
+
+.card{
+    img{
+        transition: all .3s ease-in-out;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}

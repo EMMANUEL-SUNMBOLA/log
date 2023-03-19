@@ -84,6 +84,11 @@
         
         </div>
 
+
+    </div>
+
+    <section>
+      <h1>new products</h1>
       <?php
       echo '<div class="row mt-4" id="rw-2">';
       $file = fopen("../../private/public.txt","r");
@@ -104,8 +109,7 @@
         echo '</div>';
       }
       ?>
-    </div>
-
+    </section>
     <?php
     $dist = "../../productimages/";
     Prddisp($conn,$dbtab2,$dist)

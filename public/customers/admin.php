@@ -34,7 +34,8 @@ else{
     ?>
     <nav>
         <ul>
-            <li><img src="images/images.jpg" alt=""></li>
+            <li><img src="../productimages/OpM.jpg" alt=""></li>
+            <!-- file paths are not case sensitive -->
         </ul>
         
         <h1>Welcome ADMIN</h1>

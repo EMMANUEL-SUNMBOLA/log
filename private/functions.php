@@ -138,3 +138,16 @@ function Prddisp($conn,$tab,$dist){
     echo '</div>';
   }
 }
+
+function duppost($conn,$table,$loc){
+  $msg = "SELECT loc FROM $table";
+  $result = $conn -> query($msg);
+  if($result -> num_rows >0){
+    while($data = $result -> fetch_assoc()){
+      if($data["loc"] == $loc){
+        return true;
+      }
+    }
+    return false;
+  }
+}
