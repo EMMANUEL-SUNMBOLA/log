@@ -89,29 +89,9 @@
 
     <section>
       <h1>new products</h1>
-      <?php
-      echo '<div class="row mt-4" id="rw-2">';
-      $file = fopen("../../private/public.txt","r");
-      if(!empty(fgets($file))){
-      while(!feof($file)){
-          $lin = fgets($file);
-          $line = explode("|",$lin);
-          echo '<div class="col">';
-          echo '<div class="card" style="width:18rem;">';
-          echo '<img src="../productimages/' . $line[0] . '" alt="' . $line[0] . '" class="card-img-top">';
-          echo '<h5 class="card-title">' . $line[1] . '</h5>';
-          echo '<p class="card-text">' . $line[3] . '</p>';
-          echo '<form method="post" action"../private/orders.php>';
-          echo '<button class="pbut" name="' . $line[1] . '"><i class="fa-solid fa-naira-sign"> ' . $line[2] . '</i></button>';
-          echo '</form></div></div>';
-          
-        }
-        echo '</div>';
-      }
-      ?>
-    </section>
     <?php
     $dist = "../../productimages/";
-    Prddisp($conn,$dbtab2,$dist)
+    Prddisp($conn,$dbtab2,$dist);
     ?>
-    </section>
+
+  </section>
