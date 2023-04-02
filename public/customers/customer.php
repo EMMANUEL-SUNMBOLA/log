@@ -53,6 +53,9 @@
         <button type="submit" name="out">
             Log out
         </button>
+        <button type="submit" name="cart">
+            <i class="fa-solid fa-cart"></i>
+        </button>
     </form>
 </section>
 
