@@ -1,11 +1,14 @@
 <?php
 
 class Order{
-    public $name;
-    private $order;
+    private $name;
+    private $items = [];
+    private $email;
+    private $price;
+
     function TakeOrder(string $name, array $order, $dbTab, $conn){
         $this -> name = $name;
-        $this -> order = $order;
+        $this -> items = $order;
 
         foreach($order as $celery){
             $msg = "INSERT INTO $dbTab(name, orders) VALUES('$name','$celery')";

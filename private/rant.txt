@@ -1,0 +1,28 @@
+class Order {
+    private $customerName;
+    private $customerEmail;
+    private $items = array();
+    private $totalPrice;
+
+    public function __construct($customerName, $customerEmail) {
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+    }
+
+    public function addItem($name, $price) {
+        $this->items[] = array('name' => $name, 'price' => $price);
+        $this->totalPrice += $price;
+    }
+
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function getTotalPrice() {
+        return $this->totalPrice;
+    }
+
+    public function sendEmail() {
+        // Code to send email to customer goes here
+    }
+}
