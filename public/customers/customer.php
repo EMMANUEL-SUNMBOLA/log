@@ -46,6 +46,9 @@
                 session_unset();
                 header("Location:../login.php");
             }
+            if(isset($_POST['cart'])){
+                header("Location:cart.php");
+            }
             ?>
         </span>
     </div>
@@ -54,7 +57,7 @@
             Log out
         </button>
         <button type="submit" name="cart">
-            <i class="fa-solid fa-cart"></i>
+            <i class="fa-solid fa-cart-shopping fa-bounce"></i>
         </button>
     </form>
 </section>
