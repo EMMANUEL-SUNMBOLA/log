@@ -17,6 +17,27 @@
 //     } 
 // }
 
+class Customer{
+    private $name;
+    private $pass;
+    private $email;
+    private $Prdname;
+    private $sub;
+    private $cont;
+    private $price;
+    function CreateCustomer(object $conn, string $dbTab, string $name, string $pass, string $email){
+        $this -> name = $name;
+        $this -> pass = $pass;
+        $this -> email = $email;
+        $msg = "INSERT INTO $dbTab(username, email, pwd) VALUES ('$name', '$email', '$pass')";
+        return ($conn -> query($msg)) ? true : false;
+    }
+
+    function CreatePost(object $conn, string $daTab, string $Prdame, string $sub, string $cont, string $price){
+        $this -> sub = $sub;
+    }
+
+}
 class Order {
     private $customerName;
     private $customerEmail;
