@@ -25,6 +25,7 @@ class Customer{
     private $sub;
     private $cont;
     private $price;
+    private $loc;
     function CreateCustomer(object $conn, string $dbTab, string $name, string $pass, string $email){
         $this -> name = $name;
         $this -> pass = $pass;
@@ -33,8 +34,16 @@ class Customer{
         return ($conn -> query($msg)) ? true : false;
     }
 
-    function CreatePost(object $conn, string $daTab, string $Prdame, string $sub, string $cont, string $price){
+    function CreatePost(object $conn, string $dbTab, string $Prdname, string $sub, string $cont, string $price, string $loc){
         $this -> sub = $sub;
+        $this -> cont = $cont;
+        $this -> Prdname = $Prdname;
+        $this -> price = $price;
+        $this -> loc = $loc;
+
+        $msg = "INSERT INTO $dbTab(loc, subject, content, pice)  VALUES ('$loc', '$sub', '$cont', '$price')";
+
+        return ($conn -> query($msg)) ? true : false;
     }
 
 }
